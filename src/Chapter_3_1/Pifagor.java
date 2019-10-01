@@ -1,4 +1,4 @@
-package Chapter_3;
+package Chapter_3_1;
 
 /*
 Раздел 3.3
