@@ -8,7 +8,7 @@ package Chapter_3_1;
  */
 
 public class Pifagor {
-    public static void main (String [] args) {
+    public static void main (String[] args) {
         int a, b, r;
         a = (int) (Math.random()*10 + 1);
         b = (int) (Math.random()*10 + 1);
