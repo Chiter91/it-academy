@@ -35,6 +35,6 @@ public class ArrayPrint {
         for (int i = 0; i < array.length; i++)              //записывем значения нового массива в строку
             arrayPrint += array[i] + " ";
 
-        System.out.println ("Перевернутый массив - " + arrayPrint);     //выводим на консоль отсортированный массив
+        System.out.println ("Перевернутый массив - " + arrayPrint);      //выводим на консоль отсортированный массив
     }
 }
