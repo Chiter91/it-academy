@@ -21,6 +21,7 @@ public class FindMarks {
 //            if (i == temp) {
 //                i += 2;
 //                count++;
+
 //            }
             for (int j = 0; j<marks.length(); j++) {
                 if (s.charAt(i) == marks.charAt(j))
