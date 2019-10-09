@@ -10,24 +10,31 @@ package Chapter_6_1;
 public class FindMarks {
     public static void main (String[] args) {
         int count = 0;
-        String s = "Тестовая, строка, в которой,,... несколько! знаков препинания:?";
+        String s = "...Тестовая, строка, в которой,,... несколько! знаков препинания:?..";
         String marks = ".,!?-:;()\"";
-//        String ellipsis = "...";
-//        int temp;
+        int countEllipsis = 0;
+        int temp = 0;
 
-//        temp = s.indexOf(ellipsis);
-
-        for (int i = 0; i<s.length(); i++) {
-//            if (i == temp) {
-//                i += 2;
-//                count++;
-
-//            }
-            for (int j = 0; j<marks.length(); j++) {
-                if (s.charAt(i) == marks.charAt(j))
-                    count++;
+        while(temp != -1) {                 //Считаем сколько в строке многоточий
+            temp = s.indexOf("...", temp);
+            if (temp != -1) {
+                countEllipsis += 1;         //записываем количество многоточий записывем в еременную
+                temp += 3;                  //пропускаем найденные многоточия
             }
         }
-        System.out.println("В стрроке  \"" + s + "\" мы насчитали " + count + " знаков препинания");
+
+        for (int i = 0; i<s.length(); i++) {            //каждый символ строки
+            for (int j = 0; j<marks.length(); j++) {     //сравниваем со строкой из знаков препинания
+                if (s.charAt(i) == marks.charAt(j)) {   //если находим совпадение прибавляем к общему количеству знаков
+                    count++;
+                    break;
+                }
+            }
+        }
+
+        count -= (countEllipsis * 2);   //от суммы всех знаков препинания отнимаем количество многоточий,
+                                        // т.к. многоточие состоит из трех точек, то нужно количество многоточий умножить на 2
+
+        System.out.println("В стрроке  \"" + s + "\" мы насчитали " + count  + " знаков препинания");
     }
 }
